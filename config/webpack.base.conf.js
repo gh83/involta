@@ -24,7 +24,7 @@ module.exports = {
 	output: {
 		filename: `${PATHS.assets}/[name].[hash].js`,
 		path: PATHS.public,
-		publicPath: '/'
+		publicPath: ''
 	},
 	resolve: {
 		alias: {
@@ -65,7 +65,7 @@ module.exports = {
 			loader: 'file-loader',
 			options: {
 				name: '[name].[ext]',
-				outputPath: `${PATHS.assets}/fonts`
+				outputPath: `fonts`
 			}
 		},
 		{

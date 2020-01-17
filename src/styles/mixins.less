@@ -5,15 +5,6 @@
 	font-style : @font-style;
 }
 
-.font-face(@font-family, @file-path, @font-weight, @font-style) {
-	@font-face {
-		font-family: @font-family;
-		src        : url('@{file-path}.ttf') format('truetype');
-		font-weight: @font-weight;
-		font-style : @font-style;
-	}
-}
-
 .flex(@flex-direction, @justify-content, @align-items) {
 	display        : flex;
 	flex-direction : @flex-direction;
