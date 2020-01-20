@@ -12,91 +12,113 @@ main {
       margin          : 20px 25px;
     }
 
-    .list-news {
-      .flex(row, flex-start, stretch);
-      flex-wrap: wrap;
+    .list-news-wrapper {
+      @media (max-width: 768px) {
+        position  : relative;
+        overflow-x: hidden;
+        overflow-y: visible;
+        width     : 100vw;
+        min-height: 400px;
+      }
 
-      &__item {
-        min-width: 270px;
-        padding  : 10px;
+      .list-news {
+        .flex(row, flex-start, stretch);
+        flex-wrap: wrap;
+        width    : 100%;
 
-        @media (min-width: 768px) {
-          width: 50%;
+        @media (max-width: 768px) {
+          position  : relative;
+          flex-wrap : nowrap;
+          transition: all 1s;
+          overflow  : visible;
+          width     : auto;
         }
 
-        @media (min-width: 1024px) {
-          width: 33.333%;
-        }
+        &__item {
+          padding: 10px;
 
-        @media (min-width: 1200px) {
-          width: 25%;
-        }
-
-        .item-news {
-          .flex(column, flex-start, stretch);
-          height : 100%;
-          padding: 15px;
-
-          &:hover {
-            .img {
-              transform: scale(1.1) rotate(4deg);
-            }
+          @media (max-width: 768px) {
+            min-width: 100vw;
           }
 
-          &__img-wrapper {
-            .flex(row, center, flex-start);
-
-            >.img {
-              height             : 65vw;
-              width              : 100%;
-              background-position: 50% 0%;
-              background-repeat  : no-repeat;
-              background-size    : contain;
-              transition         : transform .3s;
-
-              @media (min-width: 768px) {
-                height: 30vw;
-              }
-
-              @media (min-width: 1024px) {
-                height: 20vw;
-              }
-
-              @media (min-width: 1200px) {
-                height: 15vw;
-              }
-            }
+          @media (min-width: 768px) {
+            width: 50%;
           }
 
-          &__cathegory {
-            .font(Philosopher-Bold, 14px, 100, normal);
-            color  : @var-color-cathegory;
-            padding: 20px 0;
+          @media (min-width: 1024px) {
+            width: 33.333%;
+          }
 
-            &:before {
+          @media (min-width: 1200px) {
+            width: 25%;
+          }
+
+          .item-news {
+            .flex(column, flex-start, stretch);
+            height : 100%;
+            padding: 15px;
+
+            &:hover {
+              .img {
+                transform: scale(1.1) rotate(4deg);
+              }
+            }
+
+            &__img-wrapper {
+              .flex(row, center, flex-start);
+
+              >.img {
+                height             : 65vw;
+                width              : 100%;
+                background-position: 50% 0%;
+                background-repeat  : no-repeat;
+                background-size    : contain;
+                transition         : transform .3s;
+
+                @media (min-width: 768px) {
+                  height: 30vw;
+                }
+
+                @media (min-width: 1024px) {
+                  height: 20vw;
+                }
+
+                @media (min-width: 1200px) {
+                  height: 15vw;
+                }
+              }
+            }
+
+            &__cathegory {
+              .font(Philosopher-Bold, 14px, 100, normal);
+              color  : @var-color-cathegory;
+              padding: 20px 0;
+
+              &:before {
+                color  : @var-color-text;
+                content: "\1F5CB\00A0"
+              }
+
+            }
+
+            &__title {
+              .font(NotoSerif-Bold, 20px, 100, normal);
+              color: @var-color-title;
+            }
+
+            &__text {
+              flex: 1 1 auto;
+              .font(NotoSerif-Regular, 14px, 100, normal);
               color  : @var-color-text;
-              content: "\1F5CB\00A0"
+              padding: 15px 0;
+            }
+
+            &__subscribe {
+              .font(NotoSerif-Regular, 12px, 100, normal);
+              color: @var-color-subscribe;
             }
 
           }
-
-          &__title {
-            .font(NotoSerif-Bold, 20px, 100, normal);
-            color: @var-color-title;
-          }
-
-          &__text {
-            flex: 1 1 auto;
-            .font(NotoSerif-Regular, 14px, 100, normal);
-            color  : @var-color-text;
-            padding: 15px 0;
-          }
-
-          &__subscribe {
-            .font(NotoSerif-Regular, 12px, 100, normal);
-            color: @var-color-subscribe;
-          }
-
         }
       }
     }

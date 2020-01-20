@@ -1,2 +1,2 @@
 import './styles/index.less';
-import './js/slider.js';
+import './js/index.js';
