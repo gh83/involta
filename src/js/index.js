@@ -1,2 +1,2 @@
-import './news-block.js/index.js';
+import './news-block.js';
 
